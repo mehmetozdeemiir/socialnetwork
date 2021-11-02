@@ -29,8 +29,6 @@ public class UserManager implements UserService {
         //Id den tuttu butun değerleri dto ya cevirdi ve yansıttı
     }
 
-    //register gibi
-    //validasyonlar tam username örnek olsun diye service icinde yaptım
     @Override
     @Transactional
     public UserViewDTO createUser(UserCreateDTO userCreateDTO) {
