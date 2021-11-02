@@ -72,12 +72,7 @@ public class UserManager implements UserService {
         final User user= userRepository.findById(id).orElseThrow(()-> new ApiRequestException("güncellenemedi"));
         user.setId(userUpdateDTO.getId());
         user.setUserName(userUpdateDTO.getUserName());
-        //user.setFirstName(userUpdateDTO.getFirstName());
-        //user.setLastName(userUpdateDTO.getFirstName());
         user.setPassword(userUpdateDTO.getPassword());
-        //user.setEmail(userUpdateDTO.getEmail());
-        //user.setAge(userUpdateDTO.getAge());
-        //user.setPhoneNumber(userUpdateDTO.getPhoneNumber());
         final User updatedUser=userRepository.save(user);
         return UserViewDTO.of(updatedUser);//DTO cevirme durumu
     }
