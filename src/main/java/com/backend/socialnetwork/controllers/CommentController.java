@@ -9,6 +9,7 @@ import com.backend.socialnetwork.responses.CommentResponse;
 import com.backend.socialnetwork.validations.GenericResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,6 +34,7 @@ public class CommentController {
     }
 
     @PostMapping("/comments")
+    @ResponseStatus(HttpStatus.CREATED)
     public CommentViewDTO createComment(@RequestBody CommentCreateDTO commentCreateDTO){
         return this.commentService.createComment(commentCreateDTO);
     }

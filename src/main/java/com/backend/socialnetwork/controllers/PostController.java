@@ -6,6 +6,7 @@ import com.backend.socialnetwork.dtos.PostViewDTO;
 import com.backend.socialnetwork.responses.PostResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
@@ -30,6 +31,7 @@ public class PostController {
     }
 
     @PostMapping("/posts")
+    @ResponseStatus(HttpStatus.CREATED)
     public PostViewDTO createPost(@Valid @RequestBody PostCreateDTO postCreateDTO){
        return postService.createPost(postCreateDTO);
     }
