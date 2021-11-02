@@ -32,17 +32,7 @@ public class PostManager implements PostService
     private final LikeService likeService;
     private final CommentService commentService;
     private final DislikeService dislikeService;
-/* Bunu neden yaptık
-    @Autowired
-    public void setLikeService(LikeService likeService){
-        this.likeService=likeService;
-    }
-    @Autowired
-    public void setCommentService(CommentService commentService){
-        this.commentService=commentService;
-    }
 
-    */
     @Override
     public PostViewDTO createPost(PostCreateDTO postCreateDTO) {
         User user= userRepository.findById(postCreateDTO.getUserId()).get();
